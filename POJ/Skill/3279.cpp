@@ -58,7 +58,7 @@ void solve() {
     int res = -1;
 
     //按照字典序尝试第一行的所有可能性
-    for (int i = 0; i < 1 << N; i++) //10000(N个0)
+    for (int i = 0; i < 1 << N; i++) //10000(N个0),二进制枚举
     {
         memset(flip, 0, sizeof(flip));
         for (int j = 0; j < N; j++)
