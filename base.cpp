@@ -12,7 +12,7 @@
 using namespace std;
 int
 int main() {
-    scanf("%d%d", &, &);
+    cin>>;
     return 0;
 }
 
