@@ -17,7 +17,7 @@ void solve() {
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < W; j++) {
             if(j + w[i] < W) {
-                dp[j + w[i]] = max(dp[j + w[i]], dp[j] + v[i]);
+                dp[j + w[i]] = max(dp[j + w[i]], dp[j] + v[i]); // 迭代次序错误，这应该算完全背包
             }
         }
     }
