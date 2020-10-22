@@ -103,30 +103,30 @@
 
 // 动态规划
  
-#include<iostream>
-#include<algorithm>
+// #include<iostream>
+// #include<algorithm>
 
-using namespace std;
+// using namespace std;
 
-const int INF = 10e7;
-int n = 4;
-//存储城市之间的距离
-int g[4][4] = { {INF,3,   6,  7},
-                {12, INF, 2,  8},
-                {9,  6,   INF,2},
-                {3,  7,   6,  INF} };
-int dp[1 << 4][4];
+// const int INF = 10e7;
+// int n = 4;
+// //存储城市之间的距离
+// int g[4][4] = { {INF,3,   6,  7},
+//                 {12, INF, 2,  8},
+//                 {9,  6,   INF,2},
+//                 {3,  7,   6,  INF} };
+// int dp[1 << 4][4];
 
-int main() {
-    for (int S = 0; S < 1 << n; S++)
-        fill(dp[S], dp[S] + n, INF);
-    dp[(1 << n) - 1][0] = 0;
-    for (int S = (1 << n) - 2; 0 <= S; S--)
-        for (int v = 0; v < n; v++)
-            for (int u = 0; u < n; u++) {
-                if( !(S >> u & 1) ) {
-                    dp[S][v] = min(dp[S][v], dp[S | 1 << u][u] + g[v][u]);
-                }
-            }
-    cout << dp[0][0] << endl;
-}
+// int main() {
+//     for (int S = 0; S < 1 << n; S++)
+//         fill(dp[S], dp[S] + n, INF);
+//     dp[(1 << n) - 1][0] = 0;
+//     for (int S = (1 << n) - 2; 0 <= S; S--)
+//         for (int v = 0; v < n; v++)
+//             for (int u = 0; u < n; u++) {
+//                 if( !(S >> u & 1) ) {
+//                     dp[S][v] = min(dp[S][v], dp[S | 1 << u][u] + g[v][u]);
+//                 }
+//             }
+//     cout << dp[0][0] << endl;
+// }
