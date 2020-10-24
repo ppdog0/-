@@ -10,7 +10,7 @@
 #include<map> //map
 #define INF 0x7fffffff
 using namespace std;
-int
+
 int main() {
     cin>>;
     return 0;

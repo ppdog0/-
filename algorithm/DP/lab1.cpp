@@ -2,8 +2,7 @@
 // 对于n个物品，重量和价值分别为wi,vi
 // 从中选取物品，总重量不超过W，求价值的最大值
 
-// 使用蛮力法
-// next_permutation
+// 使用蛮力法，二进制枚举
 
 // #include<iostream>
 // #include<vector>
@@ -71,7 +70,7 @@
 
 // 旅行商问题
 
-// 暴力枚举
+// 暴力枚举，全排列枚举
 
 // #include<iostream>
 // #include<algorithm>
@@ -129,4 +128,73 @@
 //                 }
 //             }
 //     cout << dp[0][0] << endl;
+// }
+
+
+// 稳定婚姻匹配
+
+// #include<iostream>
+// using namespace std;
+
+// const int N=4;
+
+// void GaleShapley(const int (&man)[N][N],const int (&woman)[N][N],int (&match)[N]){
+//     int wm[N][N];    // wm[i][j]: rank from girl i to boy j
+//     int choose[N];    // choose[i]: current boyfriend of girl i
+//     int manIndex[N]; //    manIndex[i]: how many girls that have rejected boy i
+//     int i,j;
+//     int w,m;
+//     for(i=0;i<N;i++){
+//         match[i]=-1;
+//         choose[i]=-1;
+//         manIndex[i]=0;
+//         for(j=0;j<N;j++)
+//             wm[i][woman[i][j]]=j;
+//     }
+
+//     bool bSingle=false;
+//     while(!bSingle){
+//         bSingle=true;
+//         for(i=0;i<N;i++){
+//             if(match[i]!=-1) // boy i already have a girlfriend
+//                 continue;
+//             bSingle=false;
+//             j=manIndex[i]++; // the jth girl that boy i like most
+//             w=man[i][j];    
+//             m=choose[w];    // current girl w's boyfriend
+//             if(m==-1 || wm[w][i]<wm[w][m]){ // if girl w prefer boy i
+//                 match[i]=w;
+//                 choose[w]=i;
+//                 if(m!=-1)
+//                     match[m]=-1;
+//             }
+//         }
+//     }
+// }
+
+// void Print(const int (&match)[N],int N){
+//     for(int i=0;i<N;i++)
+//         cout<<"Boy "<<i<<" matches "<<"Girl "<<match[i]<<endl;
+//     cout<<endl;
+// }
+
+// int main(){
+//     int man[N][N]={
+//         {2,3,1,0},
+//         {2,1,3,0},
+//         {0,2,3,1},
+//         {1,3,2,0},
+//     };
+//     int woman[N][N]={
+//         {0,3,2,1},
+//         {0,1,2,3},
+//         {0,2,3,1},
+//         {1,0,3,2},
+//     };
+
+//     int match[N];
+//     GaleShapley(man,woman,match);
+//     Print(match,N);
+
+//     return 0;
 // }
