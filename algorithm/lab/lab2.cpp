@@ -58,6 +58,8 @@
 //     cout << bestv << endl;
 // }
 
+/****************************************************************/
+
 // #include<iostream>
 
 // using namespace std;
@@ -107,6 +109,8 @@
 //     search(0);
 //     cout << sum << endl;
 // }
+
+/****************************************************************/
 
 // #include<iostream>
 // #include<stack>
@@ -160,14 +164,3 @@
 // int main() {
 //     dfs(1, 1);
 // }
-
-#include<iostream>
-
-using namespace std;
-
-int m, n;
-
-int main() {
-    cin >> m >> n;
-    
-}
