@@ -37,3 +37,28 @@ void unite(int x, int y) {
 bool same(int x, int y) {
     return find(x) == find(y);
 }
+
+
+// 化简版
+
+// void init() {
+//     for (int i = 0; i < n; i++) {
+//         par[i] = i;
+//     }
+// }
+
+// void unite(int x, int y) {
+//     int x = find(x), y = find(y);
+//     if(x != y)
+//         par[y] = x;
+// }
+
+// int find(int x) {
+//     if(x == par[x])
+//         return x;
+//     return par[x] = find(x);
+// }
+
+// bool same(int x, int y) {
+//     return find(x) == find(y);
+// }
