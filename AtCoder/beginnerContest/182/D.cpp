@@ -8,23 +8,41 @@ int N;
 
 int main() {
     cin >> N;
-    int x;
-    vector<int> nums;
-    vector<vector<int>> dp(N, vector<int>(N, 0));
+    int nums[N];
+    for (int i = 0; i < N; i++)
+        cin >> nums[i];
+    long long ans = 0, res = 0;
+    long long s = 0, x = 0;
     for (int i = 0; i < N; i++) {
-        cin >> x;
-        nums.push_back(x);
+        s += nums[i];
+        res = max(res, s);
+        ans = max(ans, x + res);
+        x += s;
     }
-    int res = 0;
-    dp[0][0] = nums[0];
-    for (int i = 1; i < N; i++) {
-        for (int j = 0; j <= i; j++) {
-            if(0 < j)
-                dp[i][j] = dp[i][j - 1] + nums[j];
-            else
-                dp[i][j] = dp[i - 1][i - 1] + nums[0];
-            res = max(res, dp[i][j]);
-        }
-    }
-    cout << res << endl;
+    cout << ans << endl;
 }
+
+// #include <bits/stdc++.h>
+
+// using namespace std;
+// using ll = long long;
+
+// #define rep(i, n) for (int i = 0; i < (int)(n); ++i)
+
+// int main() {
+//   int n;
+//   cin >> n;
+//   int a[n];
+//   rep(i, n) cin >> a[i];
+//   ll ans = 0;
+//   ll x = 0, s = 0, mxs = 0;
+//   rep(i, n) {
+//     s += a[i];
+//     mxs = max(mxs, s);
+//     ans = max(ans, x + mxs);
+//     x += s;
+//   }
+
+//   cout << ans << endl;
+//   return 0;
+// }
