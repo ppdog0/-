@@ -1,51 +1,51 @@
-// // 无序数组输出第k个大小的数
-// // 使用快速排序
+// 无序数组输出第k个大小的数
+// 使用快速排序
 
-// #include<iostream>
-// #include<algorithm>
+#include<iostream>
+#include<algorithm>
 
-// using namespace std;
+using namespace std;
 
-// const int max_n = 100;
+const int max_n = 100;
 
-// // 输入
-// int n, k;
-// int nums[max_n];
+// 输入
+int n, k;
+int nums[max_n];
 
-// int partition(int lo, int hi) {
-//     swap(nums[lo], nums[rand() % (hi - lo + 1)]);
-//     int pivot = nums[lo];
-//     while(lo < hi) {
-//         while((lo < hi) && (pivot <= nums[hi]))
-//             hi--;
-//         nums[lo] = nums[hi];
-//         while((lo<hi) && (nums[lo] <= pivot))
-//             lo++;
-//         nums[hi] = nums[lo];
-//     }
-//     nums[lo] = pivot;
-//     return lo;
-// }
+int partition(int lo, int hi) {
+    swap(nums[lo], nums[lo + rand() % (hi - lo + 1)]);
+    int pivot = nums[lo];
+    while(lo < hi) {
+        while((lo < hi) && (pivot <= nums[hi]))
+            hi--;
+        nums[lo] = nums[hi];
+        while((lo<hi) && (nums[lo] <= pivot))
+            lo++;
+        nums[hi] = nums[lo];
+    }
+    nums[lo] = pivot;
+    return lo;
+}
 
-// int quickSort(int lo, int hi, int k) {
-//     if (hi - lo < 1)
-//         return nums[lo];
-//     int mi = partition(lo, hi);
-//     if (mi == k)
-//         return nums[mi];
-//     else if (mi < k)
-//         return quickSort(mi + 1, hi, k);
-//     else
-//         return quickSort(lo, mi - 1, k);
-// }
+int quickSort(int lo, int hi, int k) {
+    if (hi - lo < 1)
+        return nums[lo];
+    int mi = partition(lo, hi);
+    if (mi == k)
+        return nums[mi];
+    else if (mi < k)
+        return quickSort(mi + 1, hi, k);
+    else
+        return quickSort(lo, mi - 1, k);
+}
 
-// int main() {
-//     cin >> n >> k;
-//     for (int i = 0; i < n; i++)
-//         cin >> nums[i];
-//     int ans = quickSort(0, n - 1, k - 1);
-//     cout << ans << endl;
-// }
+int main() {
+    cin >> n >> k;
+    for (int i = 0; i < n; i++)
+        cin >> nums[i];
+    int ans = quickSort(0, n - 1, k - 1);
+    cout << ans << endl;
+}
 
 // // *******************************************************
 // // 逆序对数
@@ -66,34 +66,30 @@
 
 // int cnt = 0;
 
-// void merge(int lo, int hi, int mid)
-// {
-//     int i=lo;
-//     int j=mid + 1;
+// void merge(int lo, int hi, int mid) {
+//     int i = lo, j = mid + 1;
 //     int k=lo;
-//     while(i <= mid && j <= hi)
-//     {
-//         if(nums[i]>nums[j])
-//         {
+//     while(i <= mid && j <= hi) {
+//         if(nums[i]>nums[j]) {
 //             cnt += mid - i + 1;
-//             r[m++] = nums[i];
-//             r[m++] = nums[j];
+//             for (int k = i; k <= mid; k++) {
+//                 r[m++] = nums[k];
+//                 r[m++] = nums[j];
+//             }
 //             temp[k++] = nums[j++];
 //         }
 //         else
 //             temp[k++] = nums[i++];
 //     }
-
 //     while(i <= mid)
 //         temp[k++]=nums[i++];
 //     while(j <= hi)
 //         temp[k++]=nums[j++];
-//     for(i=lo; i<=hi; i++)
+//     for(i = lo; i <= hi; i++)
 //         nums[i]=temp[i];
-// }    
-
+// }
 // void mergeSort(int lo, int hi) {
-//     if (lo<hi) {
+//     if (lo < hi) {
 //         int mid = (lo + hi) / 2;
 //         mergeSort(lo, mid);
 //         mergeSort(mid + 1, hi);
@@ -107,8 +103,8 @@
 //         cin >> nums[i];
 //     mergeSort(0, n - 1);
 //     cout << cnt << endl;
-//     for (int i = 0; i < m; i++)
-//         cout << r[i] << " ";
+//     for (int i = 0; i < m - 1; i += 2)
+//         cout << r[i] << " " << r[i + 1] << endl;
 // }
 
 // // *******************************************************
@@ -156,30 +152,30 @@
 // *******************************************************
 // 股票收益问题
 
-#include<iostream>
+// #include<iostream>
 
-using namespace std;
+// using namespace std;
 
-const int max_n = 100;
+// const int max_n = 100;
 
-int n;
-int nums[max_n];
+// int n;
+// int nums[max_n];
 
-void solve() {
-    int min1 = nums[0];
-    int max1 = 0;
-    for (int i = 0; i < n; i++) {
-        if(nums[i] < min1)
-            min1 = nums[i];
-        else if (max1 < nums[i] - min1)
-            max1 = nums[i];
-    }
-    cout << max1 << endl;
-}
+// void solve() {
+//     int min1 = nums[0];
+//     int max1 = 0;
+//     for (int i = 0; i < n; i++) {
+//         if(nums[i] < min1)
+//             min1 = nums[i];
+//         else if (max1 < nums[i] - min1)
+//             max1 = nums[i] - min1;
+//     }
+//     cout << max1 << endl;
+// }
 
-int main() {
-    cin >> n;
-    for (int i = 0; i < n; i++)
-        cin >> nums[i];
-    solve();
-}
+// int main() {
+//     cin >> n;
+//     for (int i = 0; i < n; i++)
+//         cin >> nums[i];
+//     solve();
+// }
