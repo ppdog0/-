@@ -4,21 +4,15 @@ using namespace std;
 
 int r1, c1, r2, c2;
 
-bool check() {
-    if (r1 + c1 == r2 + c2)
-        return true;
-    else if(r1 - c1 == r2 - c2)
-        return true;
-    else if (abs(r1-r2) + abs(c1-c2) <= 3)
-        return true;
-    return false;
-}
-
 int main() {
     cin >> r1 >> c1 >> r2 >> c2;
-    int res = 0;
-    while(!check()) {
-        
-    }
-    cout << res << endl;
+    int r = r2 - r1, c = c2 - c1;
+    int ans = 3;
+    if (!r && !c)
+        ans = 0;
+    else if(r == c || r == -c || abs(r) + abs(c) <= 3)
+        ans = 1;
+    else if((r ^ c ^ 1) & 1 || abs(r+c) <= 3 || abs(r-c) <= 3 || abs(r) + abs(c) <= 6)
+        ans = 2;
+    cout << ans << endl;
 }
