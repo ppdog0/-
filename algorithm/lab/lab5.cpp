@@ -3,29 +3,29 @@
 // dp[w+w[i]]==max(dp[w+w[i]], dp[w]+v[i]);
 // 复杂度o(nsum(W/w[i]))=o(nW)
 
-// #include<iostream>
-// #include<cstring>
-// #include<algorithm>
+#include<iostream>
+#include<cstring>
+#include<algorithm>
 
-// using namespace std;
-// const int max_n = 100;
+using namespace std;
+const int max_n = 100;
 
-// int n, W;
-// int w[max_n], v[max_n];
-// int dp[max_n];
+int n, W;
+int w[max_n], v[max_n];
+int dp[max_n];
 
-// int main() {
-//     memset(dp, 0, sizeof(dp));
-//     cin >> n >> W;
-//     for (int i = 0; i < n; i++)
-//         cin >> w[i] >> v[i];
-//     for (int i = 0; i < n; i++) {
-//         for (int j = W; w[i] <= j; j--) {
-//             dp[j] = max(dp[j], dp[j - w[i]] + v[i]);
-//         }
-//     }
-//     cout << dp[W] << endl;
-// }
+int main() {
+    memset(dp, 0, sizeof(dp));
+    cin >> n >> W;
+    for (int i = 0; i < n; i++)
+        cin >> w[i] >> v[i];
+    for (int i = 0; i < n; i++) {
+        for (int j = W; w[i] <= j; j--) {
+            dp[j] = max(dp[j], dp[j - w[i]] + v[i]);
+        }
+    }
+    cout << dp[W] << endl;
+}
 
 // ****************************************************
 // 带权区间调度
@@ -156,6 +156,7 @@
 //     return 0;
 // }
 
+// ****************************************************
 // 公共子序列
 // #include<iostream>
 
@@ -178,8 +179,10 @@
 //             }
 //         }
 //     }
-//     if(dp[n][m] == m)
+//     if (dp[n][m] == m || dp[n][m] == n)
 //         cout << "Yes" << endl;
+//     else
+//         cout << "No" << endl;
 //     cout << dp[n][m] << endl;
 // }
 
