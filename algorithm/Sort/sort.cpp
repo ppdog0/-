@@ -11,9 +11,9 @@ int nums[max_n];
 void merge(int lo, int mi, int hi) {
     int *a = nums + lo;
     int lb = mi - lo, lc = hi - mi;
-    int *c = nums + mi;
     int *b = new int[lb];
     memcpy(b, a, sizeof(int) * lb);
+    int *c = nums + mi;
     int k = 0, k1 = 0, k2 = 0;
     while(k1 < lb && k2 < lc) {
         if(c[k2] < b[k1])
@@ -23,8 +23,8 @@ void merge(int lo, int mi, int hi) {
     }
     if (k1 < lb)
         a[k++] = b[k1++];
-    if (k2 < lc)
-        a[k++] = c[k2++];
+    // if (k2 < lc)
+    //     a[k++] = c[k2++];
 }
 void mergeSort(int lo, int hi) {
     if (hi - lo < 2)

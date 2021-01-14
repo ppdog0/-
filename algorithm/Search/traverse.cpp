@@ -35,27 +35,26 @@ void data()
 
 void preTraverse() {
     stack<treenode*> s;
-    s.push(root);
-    while (!s.empty()) {
-        treenode* t = s.top();
-        s.pop();
-        cout << t->value << " ";
-        if (t->right)
-            s.push(t->right);
-        while (t->left)
+    treenode* t = root;
+    while (true) {
+        while (t)
         {
-            t = t->left;
             cout << t->value << " ";
             if (t->right)
                 s.push(t->right);
+            t = t->left;
         }
+        if (s.empty())
+            break;
+        t = s.top();
+        s.pop();
     }
 }
 
 void inTraverse() {
     stack<treenode*> s;
     treenode* t = root;
-    while( t || !s.empty()) {
+    while(true) {
         while (t) {
             s.push(t);
             t = t->left;
