@@ -1,8 +1,15 @@
 #include <iostream>
 
+typedef long long ll;
 using namespace std;
 
-void solve() {}
+void solve() {
+    int n;
+    cin >> n;
+    int a[n];
+    for (int &x : a)
+        cin >> x;
+}
 
 int main()
 {

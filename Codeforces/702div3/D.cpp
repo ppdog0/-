@@ -1,15 +1,16 @@
 #include <iostream>
-#include<algorithm>
+#include <algorithm>
 
 using namespace std;
 
 // [l,r)
 void dfs(int* a, int* pos, int dep, int m, int l, int r) {
-    if(r <= l)
+    if (r <= l)
         return;
     pos[m] = dep;
     dfs(a, pos, dep + 1, max_element(a + l, a + m) - a, l, m);
-    dfs(a, pos, dep + 1, max_element(a + m + 1, a + r) - a, m + 1, r);
+    if (l + 1 < r)
+        dfs(a, pos, dep + 1, max_element(a + m + 1, a + r) - a, m + 1, r);
 }
 
 void solve() {
@@ -22,6 +23,7 @@ void solve() {
     dfs(a, pos, 0, max_element(a, a + n) - a, 0, n);
     for(int x:pos)
         cout << x << " ";
+    cout << endl;
 }
 
 int main()
