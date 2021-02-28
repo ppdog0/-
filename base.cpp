@@ -1,7 +1,10 @@
 #include <iostream>
 
-typedef long long ll;
 using namespace std;
+using ll = long long;
+using ld = long double;
+
+const int INF = (1 << 31) - 1;
 
 void solve() {
     int n;

@@ -1,7 +1,15 @@
-## atcoder
-
-### 简单题总结
+# 总结
 总结一下一些必须掌握的技巧
+
+## codeforces
+
+697div3 C: 二分图匹配
+        D: 尺取法
+
+702div3 F: map
+        G: 循环遍历
+
+## atcoder
 
 #### ABC
 

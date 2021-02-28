@@ -1,18 +1,31 @@
-// 二分图匹配
-
 #include <iostream>
-#include<algorithm>
+#include <vector>
 
+typedef long long ll;
 using namespace std;
 
 void solve() {
-    int a, b, k;
-    cin >> a >> b >> k;
-    pair<int, int> couple[k];
-    for (int i = 0; i < k; i++)
-        cin >> couple[i].first >> couple[i].second;
-    sort(couple, couple + k);
-    int ans = 0;
+    int A, B, k;
+    cin >> A >> B >> k;
+    int a[A] = {0}, b[B] = {0};
+    vector<pair<int, int>> edges(k);
+    for (auto &[x,y] : edges) {
+        cin >> x;
+    }
+    for (auto &[x, y] : edges) {
+        cin >> y;
+    }
+    for (auto &[x, y] : edges) {
+        x--;
+        y--;
+        a[x]++;
+        b[y]++;
+    }
+    ll ans = 0;
+    for (auto &[x,y]:edges) {
+        ans += k - (a[x] + b[y] - 1);
+    }
+    cout << ans / 2 << endl;
 }
 
 int main()
