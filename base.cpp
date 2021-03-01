@@ -4,7 +4,8 @@ using namespace std;
 using ll = long long;
 using ld = long double;
 
-const int INF = (1 << 31) - 1;
+const string Y = "YES";
+const string N = "NO";
 
 void solve() {
     int n;
@@ -21,6 +22,8 @@ int main()
     while (t--)
         solve();
 }
+
+// const int INF = (1 << 31) - 1;
 
 //=====================================================
 
