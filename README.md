@@ -4,14 +4,19 @@
 ## codeforces
 
 690div3 E: 取逆模2/排列组合/二分搜索
+
         G: 区间重合
 
 697div3 C: 二分图匹配
+
         D: 尺取法
+
         E: 排列组合
+
         G: 质数筛法
 
 702div3 F: map
+
         G: 循环遍历
 
 ## atcoder
