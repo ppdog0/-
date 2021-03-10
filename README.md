@@ -3,9 +3,17 @@
 
 ## codeforces
 
+### div2
+
+703div2 B: 选址问题
+
+### div3
+
 674div3 D: 区间分段
 
         E: 穷举
+
+        F: 排列组合
 
 686div3 D: 质数分解
 
