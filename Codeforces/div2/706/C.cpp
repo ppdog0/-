@@ -22,15 +22,12 @@ void solve() {
     }
     sort(a, a + n);
     sort(b, b + n);
-    double ans = INT64_MAX;
 
-    do {
-        double res = 0;
-        for (int i = 0; i < n; i++) {
-            res += sqrt(a[i] * a[i] + b[n - i - 1] * b[n - i - 1]);
-        }
-        ans = min(ans, res);
-    } while (next_permutation(b, b + n));
+    double ans = 0;
+    for (int i = 0; i < n; i++) {
+        ans += sqrt(a[i] * 1.0 * a[i] + b[i] * 1.0 * b[i]);
+    }
+
     cout << fixed << setprecision(10) << ans << endl;
 }
 
