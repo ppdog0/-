@@ -21,11 +21,11 @@ void solve() {
         int y = mod[m - i];
         if (x==0 && y==0)
             continue;
-        // ans += 1 + max(0, abs(x - y) - 1);
-        if (1 < abs(x-y)) {
-            ans += abs(x - y) - 1;
-        }
-        ans++;
+        ans += 1 + max(0, abs(x - y) - 1);
+        // if (1 < abs(x-y)) {
+        //     ans += abs(x - y) - 1;
+        // }
+        // ans++;
     }
     cout << ans << endl;
 }
