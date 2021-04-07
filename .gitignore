@@ -1,5 +1,7 @@
 .exe
 *.exe
+.out
+*.out
 .vscode
 *.vscode
 .vscode/
