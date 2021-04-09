@@ -2,7 +2,6 @@
 
 using namespace std;
 using ll = long long;
-using ld = long double;
 
 const string Y = "YES";
 const string N = "NO";
@@ -26,6 +25,7 @@ int main()
 }
 
 // const int INF = (1 << 31) - 1;
+//using ld = long double;
 
 //=====================================================
 

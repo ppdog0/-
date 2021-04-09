@@ -10,6 +10,10 @@
 
 ## codeforces
 
+### Educational
+
+双向循环
+
 ### div2
 
 703 B: 选址问题
