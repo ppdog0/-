@@ -12,7 +12,7 @@
 
 ### Educational
 
-双向循环
+bitmask,双向循环
 
 ### div2
 
